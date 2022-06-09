@@ -48,8 +48,8 @@ function ShopingList() {
       <header className={commonColumnsStyles.AppHeader}>
         <p>Shoping List</p>
         {shopingList.length === 0 && <div> Shoping list is empty </div>}
-        {shopingList.map(product => (
-          <div key={product.id} onClick={() => handlerClickRemoveProduct(product.id)}> {product.name} </div>
+        {shopingList.map((product, index) => (
+          <div key={index} onClick={() => handlerClickRemoveProduct(product.id)}> {product.name} </div>
         ))}
         {shopingListLoading && <CircularProgress />}
       </header>
